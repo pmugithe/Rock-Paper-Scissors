@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+    <script src="./sayHello.js"></script>
+</head>
+<body>
+    <h3>Rock Paper Scissors Game</h3>
+    <p>Choose your weapon:</p>
+    <ul>    
+        <li>Rock</li>
+        <li>Paper</li>
+        <li>Scissors</li>
+    </ul>
+    <script type="module">
+        import ComputerInfo from './computerInfo.js';
+        console.log("Welcome to Rock Paper Scissors!");
+        var compt = new ComputerInfo();
+        console.log("Computer chose: " + compt.getComputerChoice());
+    </script>
+    <script type="module">
+        import HumanChoice from './humanChoice.js';
+        var human = new HumanChoice();
+        console.log("Human chose: " + human.getHumanChoice());
+    </script>
+    <script type="module">  
+        import ComputerHumanScores from './computerHumanScores.js';
+        import ComputerInfo from './computerInfo.js';
+        import HumanChoice from './humanChoice.js';
+        var human = new HumanChoice();
+        var compt = new ComputerInfo();
+        let scores = new ComputerHumanScores();
+        console.log("Human chose: " + human.getHumanChoice());
+        console.log("Computer chose: " + compt.getComputerChoice());
+        console.log(scores.playGame(human.getHumanChoice(), compt.getComputerChoice()));
+    </script>
+
+</body>
+</html>
