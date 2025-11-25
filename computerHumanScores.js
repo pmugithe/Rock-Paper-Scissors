@@ -4,7 +4,6 @@ export default class HumanChoice {
         this.computerScore = computerScore;
     }
     playRound(humanChoice, computerChoice) {
-        var roundCounter = 1;
         if (humanChoice === computerChoice) {
             return "It's a tie!";
         } else if (
@@ -18,15 +17,17 @@ export default class HumanChoice {
             this.computerScore++;
             return `You lose! ${computerChoice} beats ${humanChoice}`;
         }
-        roundCounter++;
+         
     }
     playGame(humanChoiceInstance, computerChoiceInstance) {
         while(this.roundCounter <= 5) {
+            var counter =1
             this.playRound(humanChoiceInstance, computerChoiceInstance);
+            counter++;
         }
-        if (this.humanScore > this.computerScore) {
+        if (counter == 5 && this.humanScore > this.computerScore) {
             return "Congratulations! You won the game!";
-        } else if (this.humanScore < this.computerScore) {
+        } else if (counter == 5 && this.humanScore < this.computerScore) {
             return "Sorry! The computer won the game.";
         } else {
             return "The game is a tie!";

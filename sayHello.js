@@ -1,4 +1,3 @@
-function sayHello() {
-            alert("Hello, welcome to Rock Paper Scissors!");
+alert("Hello, welcome to Rock Paper Scissors!");
             
-        }
+        
